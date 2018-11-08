@@ -30,7 +30,7 @@
 
       //Raptor Vars (Modify the 'src' to your prefrence)
       let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="assets/raptorize/images/raptor.png" />'
-      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="assets/raptorize/sounds/raptor-sound.mp3" /><source src="sounds/raptor-sound.ogg" /></audio>';
+      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="assets/raptorize/sounds/raptor-sound.mp3" /><source src="assets/raptorize/sounds/raptor-sound.ogg" /></audio>';
       let locked = false;
 
       //Append Raptor and Style
