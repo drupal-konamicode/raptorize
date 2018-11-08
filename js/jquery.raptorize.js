@@ -5,10 +5,6 @@
  * http://www.opensource.org/licenses/mit-license.php
 */
 (function ($) {
-$(document).ready(function () {
-  $("body").raptorize();
-});
-(function ($) {
 
   //Stupid Browser Checking which should be in jQuery
   jQuery.browser = {};
@@ -94,4 +90,3 @@ $(document).ready(function () {
     });//each call
   }//orbit plugin call
 })(jQuery);
-});
