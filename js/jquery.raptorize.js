@@ -5,17 +5,16 @@
  * http://www.opensource.org/licenses/mit-license.php
 */
 (function ($) {
-
-  //Stupid Browser Checking which should be in jQuery
+  // Stupid Browser Checking which should be in jQuery.
   jQuery.browser = {};
   jQuery.browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase());
   jQuery.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
 
   $.fn.raptorize = function (options) {
-    //Yo' defaults
+    // Yo' defaults.
     let defaults = {
-      enterOn: 'timer', //timer, konami-code, click
-      delayTime: 5000 //time before raptor attacks on timer mode
+      delayTime: 5000,
+      path: 'foo_bar',
     };
 
     //Extend those options
@@ -28,12 +27,12 @@
         audioSupported = true;
       }
 
-      //Raptor Vars (Modify the 'src' to your prefrence)
-      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="assets/raptorize/images/raptor.png" />'
-      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="assets/raptorize/sounds/raptor-sound.mp3" /><source src="assets/raptorize/sounds/raptor-sound.ogg" /></audio>';
+      // Raptor Vars (Modify the 'src' to your prefrence).
+      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/' + options.path + '/assets/raptorize/images/raptor.png" />'
+      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/' + options.path + '/assets/raptorize/sounds/raptor-sound.mp3" /><source src="' + options.path + '/assets/raptorize/sounds/raptor-sound.ogg" /></audio>';
       let locked = false;
 
-      //Append Raptor and Style
+      // Append Raptor and Style.
       $('body').append(raptorImageMarkup);
       if (audioSupported) {
         $('body').append(raptorAudioMarkup);
@@ -45,12 +44,12 @@
         "display": "none"
       });
 
-      // Animating Code
+      // Animating Code.
       function init() {
         locked = true;
         $(window).scrollTop(9999999);
         let raptor = $('#elRaptor').css({"display": "block"});
-        //Sound Hilarity
+        // Sound Hilarity.
         if (audioSupported) {
           function playSound() {
             document.getElementById('elRaptorShriek').play();
@@ -59,7 +58,7 @@
           playSound();
         }
 
-        // Movement Hilarity	
+        // Movement Hilarity.
         raptor.animate({
           "bottom": "0px"
         }, function () {
@@ -75,18 +74,8 @@
           });
         });
       }
-
-      if (options.enterOn == 'timer') {
-        setTimeout(init, options.delayTime);
-      }
-      else if (options.enterOn == 'click') {
-        _this.bind('click', function (e) {
-          e.preventDefault();
-          if (!locked) {
-            init();
-          }
-        })
-      }
-    });//each call
-  }//orbit plugin call
+      
+      setTimeout(init, options.delayTime);
+    });
+  }
 })(jQuery);
