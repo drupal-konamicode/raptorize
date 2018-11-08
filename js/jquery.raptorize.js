@@ -4,6 +4,7 @@
  * Free to use under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
 */
+(function ($) {
 $(document).ready(function () {
   $("body").raptorize();
 });
@@ -93,3 +94,4 @@ $(document).ready(function () {
     });//each call
   }//orbit plugin call
 })(jQuery);
+});
