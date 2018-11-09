@@ -21,8 +21,11 @@
       }
 
       // Raptor Vars (Modify the 'src' to your preference).
-      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/vendor/drupal-konamicode/raptorize/assets/images/raptor.png"/>'
-      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/vendor/drupal-konamicode/raptorize/assets/sounds/raptor-sound.mp3"/><source src="/vendor/drupal-konamicode/raptorize/assets/sounds/raptor-sound.ogg"/></audio>';
+      //let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/vendor/drupal-konamicode/raptorize/assets/images/raptor.png"/>'
+      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="../assets/images/raptor.png"/>'
+
+      //let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/vendor/drupal-konamicode/raptorize/assets/sounds/raptor-sound.mp3"/><source src="/vendor/drupal-konamicode/raptorize/assets/sounds/raptor-sound.ogg"/></audio>';
+      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="../assets/sounds/raptor-sound.mp3"/><source src="../assets/sounds/raptor-sound.ogg"/></audio>';
       let locked = false;
 
       // Append Raptor and Style.
