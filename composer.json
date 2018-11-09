@@ -1,6 +1,6 @@
 {
   "name":"drupal-konamicode/raptorize",
-  "type": "library",
+  "type": "drupal-library",
   "description": "Drupal Konami Code Raptorize jQuery plugin",
   "keywords": ["drupal","konamicode","raptorize"],
   "homepage": "https://github.com/drupal-konamicode/raptorize",
