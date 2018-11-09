@@ -12,5 +12,9 @@
       "homepage": "https://github.com/drupal-konamicode",
       "role": "Maintainer"
     }
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drupal-konamicode/raptorize.git"
+  }
 }
