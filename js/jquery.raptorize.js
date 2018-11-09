@@ -1,9 +1,3 @@
-/*
- * jQuery Raptorize Plugin
- * @acrogenesis
- * Free to use under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
-*/
 (function ($) {
   // Stupid Browser Checking which should be in jQuery.
   jQuery.browser = {};
@@ -14,7 +8,6 @@
     // Yo' defaults.
     let defaults = {
       delayTime: 5000,
-      path: 'foo_bar',
     };
 
     //Extend those options
@@ -27,12 +20,9 @@
         audioSupported = true;
       }
 
-      // Raptor Vars (Modify the 'src' to your prefrence).
-      //let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/' + options.path + '/assets/raptorize/images/raptor.png" />'
-      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="../assets/images/raptor.png"/>'
-            
-      //let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/' + options.path + '/assets/raptorize/sounds/raptor-sound.mp3" /><source src="' + options.path + '/assets/raptorize/sounds/raptor-sound.ogg" /></audio>';
-      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="../assets/sounds/raptor-sound.mp3"/><source src="../assets/sounds/raptor-sound.ogg"/></audio>';
+      // Raptor Vars (Modify the 'src' to your preference).
+      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="https://cdn.jsdelivr.net/gh/drupal-konamicode/raptorize/assets/images/raptor.png"/>'
+      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="https://cdn.jsdelivr.net/gh/drupal-konamicode/raptorize/assets/sounds/raptor-sound.mp3"/><source src="https://cdn.jsdelivr.net/gh/drupal-konamicode/raptorize/assets/sounds/raptor-sound.ogg"/></audio>';
       let locked = false;
 
       // Append Raptor and Style.
@@ -40,6 +30,7 @@
       if (audioSupported) {
         $('body').append(raptorAudioMarkup);
       }
+
       let raptor = $('#elRaptor').css({
         "position": "fixed",
         "bottom": "-300px",
@@ -57,7 +48,6 @@
           function playSound() {
             document.getElementById('elRaptorShriek').play();
           }
-
           playSound();
         }
 
@@ -77,7 +67,7 @@
           });
         });
       }
-      
+
       setTimeout(init, options.delayTime);
     });
   }
