@@ -1,0 +1,16 @@
+{
+  "name":"drupal-konamicode/raptorize",
+  "type": "library",
+  "description": "Drupal Konami Code Raptorize jQuery plugin",
+  "keywords": ["drupal","konamicode","raptorize"],
+  "homepage": "https://github.com/drupal-konamicode/raptorize",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bram Driesen",
+      "email": "bram.opensource@gmail.com",
+      "homepage": "https://github.com/drupal-konamicode",
+      "role": "Maintainer"
+    }
+  ]
+}
