@@ -1,19 +1,19 @@
 (function ($) {
-  // Stupid Browser Checking which should be in jQuery.
-  jQuery.browser = {};
-  jQuery.browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase());
-  jQuery.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
+  // Browser Checking which should be in jQuery.
+  $.browser = {};
+  $.browser.mozilla = /mozilla/.test(navigator.userAgent.toLowerCase()) && !/webkit/.test(navigator.userAgent.toLowerCase());
+  $.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
 
+  // The Raptorize plugin call.
   $.fn.raptorize = function (options) {
-    // Yo' defaults.
+    // The defaults options in case nothing is saved.
     let defaults = {
       delayTime: 5000,
     };
 
-    //Extend those options
+    // Extend those options.
     options = $.extend(defaults, options);
     return this.each(function () {
-      let _this = $(this);
       let audioSupported = false;
 
       if ($.browser.mozilla || $.browser.webkit) {
@@ -21,11 +21,8 @@
       }
 
       // Raptor Vars (Modify the 'src' to your preference).
-      //let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/vendor/drupal-konamicode/raptorize/assets/images/raptor.png"/>'
-      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="../assets/images/raptor.png"/>'
-
-      //let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/vendor/drupal-konamicode/raptorize/assets/sounds/raptor-sound.mp3"/><source src="/vendor/drupal-konamicode/raptorize/assets/sounds/raptor-sound.ogg"/></audio>';
-      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="../assets/sounds/raptor-sound.mp3"/><source src="../assets/sounds/raptor-sound.ogg"/></audio>';
+      let raptorImageMarkup = '<img id="elRaptor" style="display: none" src="/libraries/raptorize/assets/images/raptor.png"/>'
+      let raptorAudioMarkup = '<audio id="elRaptorShriek" preload="auto"><source src="/libraries/raptorize/assets/sounds/raptor-sound.mp3"/><source src="/libraries/raptorize/assets/sounds/raptor-sound.ogg"/></audio>';
       let locked = false;
 
       // Append Raptor and Style.
@@ -38,14 +35,15 @@
         "position": "fixed",
         "bottom": "-300px",
         "right": "0",
-        "display": "none"
+        "display": "none",
+        "z-index": "666"
       });
 
       // Animating Code.
       function init() {
         locked = true;
         $(window).scrollTop(9999999);
-        let raptor = $('#elRaptor').css({"display": "block"});
+        raptor = $('#elRaptor').css({"display": "block"});
         // Sound Hilarity.
         if (audioSupported) {
           function playSound() {
